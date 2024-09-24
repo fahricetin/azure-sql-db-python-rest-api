@@ -12,8 +12,17 @@ from opencensus.ext.flask.flask_middleware import FlaskMiddleware
 from opencensus.trace.samplers import ProbabilitySampler
 import logging
 
+SERVER = '192.168.65.3'
+DATABASE = 'WideWorldImporters-Full'
+USERNAME = 'PythonWebApp'
+PASSWORD = 'a987REALLY#$%TRONGpa44w0rd'
+
+connectionString = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};UID={USERNAME};PWD={PASSWORD}'
+#print(connectionString)
+
 # Initialize Flask
 app = Flask(__name__)
+
 
 # Setup Azure Monitor
 if 'APPINSIGHTS_KEY' in os.environ:
@@ -42,7 +51,9 @@ class ConnectionManager(object):
     def __getConnection(self):
         if (self.__connection == None):
             application_name = ";APP={0}".format(socket.gethostname())  
-            self.__connection = pyodbc.connect(os.environ['SQLAZURECONNSTR_WWIF'] + application_name)                  
+            self.__connection = pyodbc.connect(connectionString)
+            
+                  
         
         return self.__connection
 

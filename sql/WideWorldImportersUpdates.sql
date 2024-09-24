@@ -7,11 +7,19 @@ END
 GO
 
 /*
-	Create user to be used in the sample API solution
+	Create user to be used in the sample API solution for contairized Azure SQL
 */
-IF USER_ID('PythonWebApp') IS NULL BEGIN	
+/*IF USER_ID('PythonWebApp') IS NULL BEGIN	
 	CREATE USER [PythonWebApp] WITH PASSWORD = 'a987REALLY#$%TRONGpa44w0rd';	
 END
+*/
+
+/*  
+	Create user to be used in the sample API solution
+*/
+CREATE LOGIN PythonWebApp WITH PASSWORD = 'a987REALLY#$%TRONGpa44w0rd';
+CREATE USER PythonWebApp FOR LOGIN PythonWebApp;
+
 
 /*
 	Grant execute permission to created users

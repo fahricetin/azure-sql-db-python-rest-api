@@ -4,6 +4,7 @@ from flask import Flask
 from flask_restful import reqparse, Api, Resource
 import json
 import pyodbc
+app.config['SQLAZURECONNSTR_WWIF'] = ""
 
 # This is a simplified example that only support GET request.
 # It is meant to help you to get you started if you're new to development
