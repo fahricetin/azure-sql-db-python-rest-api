@@ -50,3 +50,5 @@ EXPOSE 5001
 
 # Define the command to start the app
 CMD ["flask", "run", "--host=0.0.0.0"]
+
+# run container docker run --name python-web-api -d --restart always -p 5001:5000  python-web-api:1.0.0
