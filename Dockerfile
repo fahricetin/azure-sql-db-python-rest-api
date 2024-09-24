@@ -43,7 +43,7 @@ COPY . .
 
 # Set environment variables TODO
 #ENV FLASK_ENV=development
-#ENV SQLAZURECONNSTR_WWIF="={ODBC Driver 17 for SQL Server};SERVER=193.168.65.3,1433;DATABASE=WideWorldImporters-Full;UID=PythonWebApp;PWD=a987REALLY#$%TRONGpa44w0rd;Encrypt=yes;TrustServerCertificate=no"
+#ENV SQLAZURECONNSTR_WWIF="={ODBC Driver 17 for SQL Server};SERVER=192.168.65.3,1433;DATABASE=WideWorldImporters-Full;UID=PythonWebApp;PWD=a987REALLY#$%TRONGpa44w0rd;Encrypt=yes;TrustServerCertificate=no"
 
 # Expose the port your app runs on
 EXPOSE 5001
